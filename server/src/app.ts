@@ -16,6 +16,9 @@ import { errorHandler } from './middleware/error.middleware';
 export const createApp = (): Application => {
   const app = express();
 
+  // Trust reverse proxy (essential on Render, Railway, etc. for HTTPS session cookies)
+  app.set('trust proxy', 1);
+
   // 1. Security Headers via Helmet
   app.use(
     helmet({
@@ -25,7 +28,7 @@ export const createApp = (): Application => {
     })
   );
 
-  // 2. Strict CORS Configuration (Only explicitly approved client origin)
+  // 2. Strict CORS Configuration (Permits approved origins and all Vercel deployments)
   const allowedOrigins = [env.CLIENT_ORIGIN];
   if (env.CLIENT_URL && !allowedOrigins.includes(env.CLIENT_URL)) {
     allowedOrigins.push(env.CLIENT_URL);
@@ -36,7 +39,14 @@ export const createApp = (): Application => {
       origin: (origin, callback) => {
         // Allow requests with no origin (e.g. mobile apps, curl, server-to-server)
         if (!origin) return callback(null, true);
-        if (allowedOrigins.includes(origin) || env.NODE_ENV === 'development') {
+        const originClean = origin.replace(/\/+$/, '');
+        const isAllowed =
+          allowedOrigins.includes(origin) ||
+          allowedOrigins.includes(originClean) ||
+          env.NODE_ENV === 'development' ||
+          /\.vercel\.app$/.test(originClean);
+
+        if (isAllowed) {
           return callback(null, true);
         }
         return callback(new Error(`CORS policy violation: origin ${origin} is not allowed`));

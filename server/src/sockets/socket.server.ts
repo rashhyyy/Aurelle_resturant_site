@@ -74,7 +74,18 @@ export const setupSocketServer = (httpServer: HttpServer): Server => {
     SocketData
   >(httpServer, {
     cors: {
-      origin: env.CLIENT_ORIGIN,
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        const originClean = origin.replace(/\/+$/, '');
+        const allowed = [env.CLIENT_ORIGIN, env.CLIENT_URL].filter(Boolean) as string[];
+        const isAllowed =
+          allowed.includes(origin) ||
+          allowed.includes(originClean) ||
+          env.NODE_ENV === 'development' ||
+          /\.vercel\.app$/.test(originClean);
+        if (isAllowed) return callback(null, true);
+        return callback(new Error('Origin not permitted by Socket.IO CORS'));
+      },
       credentials: true,
       methods: ['GET', 'POST'],
     },
