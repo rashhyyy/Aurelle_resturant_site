@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "mongodb.mongodb-vscode",
+    "postman.postman-for-vscode",
+    "github.vscode-github-actions",
+    "eamodio.gitlens"
+  ]
+}

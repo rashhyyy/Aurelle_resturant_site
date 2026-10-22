@@ -1,0 +1,629 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0F0F0F;
+  --foreground: #ECE7DF;
+  --card-bg: #16181D;
+  --card-border: #262B35;
+  --text-primary: #ECE7DF;
+  --text-secondary: #BAB3A8;
+}
+
+html[data-theme="light"],
+html.light {
+  --background: #F6F1E8;
+  --foreground: #171715;
+  --card-bg: #FFFCF7;
+  --card-border: #DED5C7;
+  --text-primary: #171715;
+  --text-secondary: #4A4640;
+  --accent: #B99A63;
+  --pre-footer: #EDE5D8;
+  --footer-bg: #F8F5EE;
+  color-scheme: light;
+}
+
+html[data-theme="dark"],
+html.dark {
+  --background: #0F0F0F;
+  --foreground: #ECE7DF;
+  --card-bg: #16181D;
+  --card-border: #262B35;
+  --text-primary: #ECE7DF;
+  --text-secondary: #BAB3A8;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================================
+   SMOOTH THEME TRANSITION
+   Provides a silky 0.3s cross-fade when switching themes
+   ========================================================================== */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+  transition-delay: 0s !important;
+}
+
+/* ==========================================================================
+   GLOBAL AURELLE LIGHT THEME SYSTEM
+   Palette Specification:
+   - Main Background:               Warm Ivory #F6F1E8
+   - Alternate Section Background:  Soft White #FFFCF7
+   - Pre-Footer Background:         Warm Beige #EDE5D8
+   - Footer Background:             Deep Warm Taupe #DDD1C0
+   - Main Text:                     Obsidian #171715
+   - Secondary Text:                Muted Charcoal #5C5852
+   - Accent Color:                  Champagne Gold #B99A63
+   - Section Dividers:              Soft Beige #DED5C7
+   ========================================================================== */
+
+/* 1. Page Backgrounds & Canvas Containers -> Warm Ivory #F6F1E8 */
+html[data-theme="light"] body,
+html[data-theme="light"] main,
+html[data-theme="light"] [data-theme="light"],
+html[data-theme="light"] [class*="bg-[#0A0A0A]"],
+html[data-theme="light"] [class*="bg-[#0C0D0E]"],
+html[data-theme="light"] [class*="bg-[#0C0D10]"],
+html[data-theme="light"] [class*="bg-[#0D0D0C]"],
+html[data-theme="light"] [class*="bg-[#0D0F12]"],
+html[data-theme="light"] [class*="bg-[#0F0F0F]"],
+html[data-theme="light"] [class*="bg-[#101114]"],
+html[data-theme="light"] [class*="bg-[#111111]"],
+html[data-theme="light"] [class*="bg-[#111215]"],
+html[data-theme="light"] [class*="bg-[#121210]"],
+html[data-theme="light"] [class*="bg-[#121316]"],
+html[data-theme="light"] [class*="bg-[#12141A]"],
+html[data-theme="light"] [class*="bg-[#141412]"],
+html[data-theme="light"] [class*="bg-[#14151B]"],
+html[data-theme="light"] [class*="bg-[#14161A]"],
+html[data-theme="light"] [class*="bg-[#14161C]"],
+html[data-theme="light"] [class*="bg-[#15171D]"],
+html[data-theme="light"] [class*="bg-[#161614]"],
+html[data-theme="light"] [class*="bg-[#16171B]"],
+html[data-theme="light"] [class*="bg-[#16181C]"],
+html[data-theme="light"] [class*="bg-[#16181F]"],
+html[data-theme="light"] [class*="bg-stone-950"],
+html[data-theme="light"] [class*="bg-stone-900"]:not([class*="pointer-events-none"]) {
+  background-color: #F6F1E8 !important;
+}
+
+/* 2. Alternate Section Backgrounds & Containers -> Soft White #FFFCF7 */
+html[data-theme="light"] [class*="bg-[#121418]"],
+html[data-theme="light"] [class*="bg-[#141518]"],
+html[data-theme="light"] [class*="bg-[#15171C]"],
+html[data-theme="light"] [class*="bg-[#16181E]"],
+html[data-theme="light"] [class*="bg-[#171715]"]:not(button):not([data-hero] *),
+html[data-theme="light"] [class*="bg-[#1C1B17]"],
+html[data-theme="light"] [class*="bg-[#1E1D1A]"] {
+  background-color: #FFFCF7 !important;
+}
+
+/* 3. Pre-Footer Section -> Warm Beige #EDE5D8 */
+html[data-theme="light"] [class*="bg-[#1A1A17]"],
+html[data-theme="light"] [class*="bg-[#1D1D19]"],
+html[data-theme="light"] [class*="bg-[#1A1916]"] {
+  background-color: #EDE5D8 !important;
+}
+
+/* 4. Footer Component in Light Mode -> Rich Luxury Dark Espresso Brown #201A16 */
+html[data-theme="light"] footer[role="contentinfo"] {
+  background-color: #201A16 !important;
+  border-top: 1px solid rgba(185, 154, 99, 0.45) !important;
+  color: #ECE7DF !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] .border-b,
+html[data-theme="light"] footer[role="contentinfo"] [class*="border-[#23211F]"] {
+  border-color: rgba(222, 213, 199, 0.12) !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-white"],
+html[data-theme="light"] footer[role="contentinfo"] span.font-serif,
+html[data-theme="light"] footer[role="contentinfo"] .font-serif {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] h3,
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#B99A63]"],
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#C1A87D]"] {
+  color: #C1A87D !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] p,
+html[data-theme="light"] footer[role="contentinfo"] p[class*="text-[#9C958B]"] {
+  color: #C7BEB2 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#8F887E]"],
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#9C958B]"],
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#C4BDAF]"] {
+  color: #ABA093 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#BAB3A8]"],
+html[data-theme="light"] footer[role="contentinfo"] nav a,
+html[data-theme="light"] footer[role="contentinfo"] a:not([href="/reservations"]) {
+  color: #DDD4C7 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#BAB3A8]"]:hover,
+html[data-theme="light"] footer[role="contentinfo"] nav a:hover,
+html[data-theme="light"] footer[role="contentinfo"] a:not([href="/reservations"]):hover {
+  color: #E8CF9B !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] a[href="/reservations"] {
+  border-color: rgba(185, 154, 99, 0.7) !important;
+  background-color: #2D231E !important;
+  color: #FAF6F0 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] a[href="/reservations"]:hover {
+  background-color: #B99A63 !important;
+  border-color: #B99A63 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] a[href="/reservations"] svg {
+  color: #C1A87D !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] a[href="/reservations"]:hover svg {
+  color: #171715 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="border-[#262B35]"] {
+  border-color: #43362E !important;
+  background-color: #2C231E !important;
+  color: #C1A87D !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="border-[#262B35]"]:hover {
+  background-color: #B99A63 !important;
+  border-color: #B99A63 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#3E3A35]"] {
+  color: #61554A !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] [class*="text-[#ECE7DF]"] {
+  color: #ECE7DF !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] button {
+  color: #DDD4C7 !important;
+}
+
+html[data-theme="light"] footer[role="contentinfo"] button:hover {
+  color: #E8CF9B !important;
+}
+
+/* 4b. Staff Dashboard Left Sidebar in Light Mode -> Rich Luxury Dark Espresso Brown #201A16 */
+html[data-theme="light"] aside.staff-sidebar,
+html[data-theme="light"] div.staff-sidebar,
+html[data-theme="light"] [data-staff-sidebar="true"] {
+  background-color: #201A16 !important;
+  border-right-color: #342A24 !important;
+}
+
+html[data-theme="light"] .staff-sidebar .border-b {
+  border-bottom-color: #342A24 !important;
+}
+
+html[data-theme="light"] .staff-sidebar .border-t {
+  border-top-color: #342A24 !important;
+}
+
+/* 5. Cards, Elevated Surfaces, Popups, Dropdowns & Modals -> Soft White #FFFCF7 */
+html[data-theme="light"] [class*="bg-[#17181D]"],
+html[data-theme="light"] [class*="bg-[#17181E]"],
+html[data-theme="light"] [class*="bg-[#17191E]"],
+html[data-theme="light"] [class*="bg-[#17191F]"],
+html[data-theme="light"] [class*="bg-[#171A21]"],
+html[data-theme="light"] [class*="bg-[#181714]"],
+html[data-theme="light"] [class*="bg-[#181A16]"],
+html[data-theme="light"] [class*="bg-[#181A20]"],
+html[data-theme="light"] [class*="bg-[#181B22]"],
+html[data-theme="light"] [class*="bg-[#1A1A18]"],
+html[data-theme="light"] [class*="bg-[#1A1D24]"],
+html[data-theme="light"] [class*="bg-[#16181D]"],
+html[data-theme="light"] [class*="bg-[#1C1F26]"],
+html[data-theme="light"] [class*="bg-[#1C1F28]"],
+html[data-theme="light"] [class*="bg-[#1D1E1B]"],
+html[data-theme="light"] [class*="bg-[#1E1E1B]"],
+html[data-theme="light"] [class*="bg-[#1E1E1C]"],
+html[data-theme="light"] [class*="bg-[#1E2028]"],
+html[data-theme="light"] [class*="bg-[#1E222A]"],
+html[data-theme="light"] [class*="bg-[#1F232B]"],
+html[data-theme="light"] [class*="bg-[#20221E]"],
+html[data-theme="light"] [class*="bg-[#20242E]"],
+html[data-theme="light"] [class*="bg-[#202530]"],
+html[data-theme="light"] [class*="bg-[#21232B]"],
+html[data-theme="light"] [class*="bg-stone-800"]:not([class*="pointer-events-none"]),
+html[data-theme="light"] [class*="bg-zinc-800"],
+html[data-theme="light"] [class*="bg-zinc-900"] {
+  background-color: #FFFCF7 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Active Highlight Card -> Warm Beige #EDE5D8 */
+html[data-theme="light"] [class*="bg-[#21242D]"] {
+  background-color: #EDE5D8 !important;
+  border-color: #B99A63 !important;
+}
+
+/* 6. Action Buttons & Interactive Elements */
+html[data-theme="light"] [class*="bg-[#0F1116]"] {
+  background-color: #EDE5D8 !important;
+  color: #171715 !important;
+  border-color: #DED5C7 !important;
+}
+
+html[data-theme="light"] [class*="bg-[#0F1116]"]:hover {
+  background-color: #B99A63 !important;
+  color: #171715 !important;
+  border-color: #B99A63 !important;
+}
+
+html[data-theme="light"] [class*="hover:bg-[#1C1F26]"]:hover,
+html[data-theme="light"] [class*="hover:bg-[#20221E]"]:hover {
+  background-color: #EDE5D8 !important;
+}
+
+/* 7. Section Dividers, Horizontal Lines & Borders -> Soft Beige #DED5C7 */
+html[data-theme="light"] [class*="border-[#0C0D10]"],
+html[data-theme="light"] [class*="border-[#121418]"],
+html[data-theme="light"] [class*="border-[#171715]"],
+html[data-theme="light"] [class*="border-[#1F232D]"],
+html[data-theme="light"] [class*="border-[#22211E]"],
+html[data-theme="light"] [class*="border-[#22211F]"],
+html[data-theme="light"] [class*="border-[#222530]"],
+html[data-theme="light"] [class*="border-[#23211F]"],
+html[data-theme="light"] [class*="border-[#232730]"],
+html[data-theme="light"] [class*="border-[#242833]"],
+html[data-theme="light"] [class*="border-[#252522]"],
+html[data-theme="light"] [class*="border-[#252A34]"],
+html[data-theme="light"] [class*="border-[#262521]"],
+html[data-theme="light"] [class*="border-[#262623]"],
+html[data-theme="light"] [class*="border-[#262B35]"],
+html[data-theme="light"] [class*="border-[#272B35]"],
+html[data-theme="light"] [class*="border-[#282723]"],
+html[data-theme="light"] [class*="border-[#2A2925]"],
+html[data-theme="light"] [class*="border-[#2A2926]"],
+html[data-theme="light"] [class*="border-[#2A2E38]"],
+html[data-theme="light"] [class*="border-[#2B2A26]"],
+html[data-theme="light"] [class*="border-[#2B2E37]"],
+html[data-theme="light"] [class*="border-[#2B303C]"],
+html[data-theme="light"] [class*="border-[#2C2C28]"],
+html[data-theme="light"] [class*="border-[#2C313D]"],
+html[data-theme="light"] [class*="border-[#2C3340]"],
+html[data-theme="light"] [class*="border-[#2D3340]"],
+html[data-theme="light"] [class*="border-[#2D3341]"],
+html[data-theme="light"] [class*="border-[#2D3342]"],
+html[data-theme="light"] [class*="border-[#2E3129]"],
+html[data-theme="light"] [class*="border-[#2F3528]"],
+html[data-theme="light"] [class*="border-[#2F3542]"],
+html[data-theme="light"] [class*="border-[#33312B]"],
+html[data-theme="light"] [class*="border-[#383E4E]"],
+html[data-theme="light"] [class*="border-[#3E3E38]"],
+html[data-theme="light"] [class*="border-[#3E4656]"],
+html[data-theme="light"] [class*="border-[#DFD8CB]"],
+html[data-theme="light"] [class*="border-stone-800"],
+html[data-theme="light"] [class*="border-stone-700"],
+html[data-theme="light"] [class*="border-stone-600"],
+html[data-theme="light"] [class*="border-white/10"],
+html[data-theme="light"] [class*="border-white/15"],
+html[data-theme="light"] [class*="border-white/20"],
+html[data-theme="light"] [class*="border-white/5"] {
+  border-color: #DED5C7 !important;
+}
+
+html[data-theme="light"] [class*="divide-stone-800"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #DED5C7 !important;
+}
+
+/* 8. Main Typography -> Obsidian #171715 */
+html[data-theme="light"] [class*="text-white"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-stone-100"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-stone-200"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#ECE7DF]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#F6F1E8]"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#F6F2EB]"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#F6F4EE]"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#EDE6D8]"]:not([data-hero] *):not(.keep-white):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *) {
+  color: #171715 !important;
+}
+
+/* 9. Secondary Typography -> Muted Charcoal #5C5852 */
+html[data-theme="light"] [class*="text-stone-300"]:not([data-hero] *):not(.keep-white):not([class*="bg-[#566453]"] *):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-stone-400"]:not([data-hero] *):not(.keep-white):not([class*="bg-[#566453]"] *):not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#BAB3A8]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#9C958B]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#8F887E]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#C4BDAF]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *),
+html[data-theme="light"] [class*="text-[#D2CBC1]"]:not(footer *):not([data-staff-sidebar] *):not(.staff-sidebar *) {
+  color: #5C5852 !important;
+}
+
+/* 10. Accent Elements & Prices -> Champagne Gold #B99A63 */
+html[data-theme="light"] [class*="text-[#C1A87D]"],
+html[data-theme="light"] [class*="text-[#E2CE9C]"],
+html[data-theme="light"] [class*="text-[#E8DCC4]"] {
+  color: #B99A63 !important;
+}
+
+html[data-theme="light"] [class*="bg-[#C1A87D]"],
+html[data-theme="light"] [class*="bg-[#E2CE9C]"] {
+  background-color: #B99A63 !important;
+}
+
+/* 11. Preserve Crisp White Overlays on Hero Slides & Media */
+html[data-theme="light"] [data-hero] [class*="text-white"],
+html[data-theme="light"] [data-hero] h1,
+html[data-theme="light"] [data-hero] h2,
+html[data-theme="light"] [data-hero] h3,
+html[data-theme="light"] [data-hero] p,
+html[data-theme="light"] [data-hero] span:not([class*="bg-[#C1A87D]"] *):not([class*="bg-[#B99A63]"] *),
+html[data-theme="light"] [data-hero] [class*="keep-white"],
+html[data-theme="light"] [data-hero="true"] h1,
+html[data-theme="light"] [data-hero="true"] h2,
+html[data-theme="light"] [data-hero="true"] h3,
+html[data-theme="light"] [data-hero="true"] p,
+html[data-theme="light"] [data-hero="true"] span:not([class*="bg-[#C1A87D]"] *):not([class*="bg-[#B99A63]"] *),
+html[data-theme="light"] [data-hero="true"] [class*="text-white"],
+html[data-theme="light"] [data-hero="true"] [class*="text-stone-100"],
+html[data-theme="light"] [data-hero="true"] [class*="text-stone-200"],
+html[data-theme="light"] [data-hero="true"] .keep-white,
+html[data-theme="light"] .keep-white {
+  color: #FFFFFF !important;
+}
+
+/* 12. Form Inputs, Selects & Textareas */
+html[data-theme="light"] input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="light"] select,
+html[data-theme="light"] textarea {
+  background-color: #FFFCF7 !important;
+  color: #171715 !important;
+  border-color: #DED5C7 !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: #5C5852 !important;
+  opacity: 0.7;
+}
+
+/* 13. Pre-Footer Action Button in Light Mode */
+html[data-theme="light"] section:has(iframe) a[href="/contact"] {
+  background-color: transparent !important;
+  border-color: #B99A63 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] section:has(iframe) a[href="/contact"]:hover {
+  background-color: #DDD1C0 !important;
+  border-color: #B99A63 !important;
+  color: #171715 !important;
+}
+
+/* 14. Modals, Dialogs & Toast Notifications in Light Mode */
+html[data-theme="light"] [role="dialog"],
+html[data-theme="light"] [role="status"] {
+  color: #171715 !important;
+}
+
+/* 15. Preserve Crisp Ivory Text on Signature Sage Green Reservation Panel */
+html[data-theme="light"] [class*="bg-[#566453]"] [class*="text-white"],
+html[data-theme="light"] [class*="bg-[#566453]"] h2 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] [class*="bg-[#566453]"] p,
+html[data-theme="light"] [class*="bg-[#566453]"] span {
+  color: #D8E0D5 !important;
+}
+
+html[data-theme="light"] [class*="bg-[#566453]"] a {
+  background-color: #F6F2EB !important;
+  color: #171715 !important;
+}
+
+/* 16. Journal Section Shadows in Light Mode */
+html[data-theme="light"] section:has(svg[viewBox="0 0 1000 1320"]) [class*="text-black/20"] {
+  color: rgba(92, 88, 82, 0.12) !important;
+}
+
+/* 17. Pre-Footer Map Badge in Light Mode */
+html[data-theme="light"] section:has(iframe) [class*="absolute top-4"] {
+  background-color: rgba(255, 252, 247, 0.95) !important;
+  border-color: rgba(185, 154, 99, 0.6) !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] section:has(iframe) [class*="absolute top-4"] span {
+  color: #171715 !important;
+}
+
+/* 18. Navigation Bar & Notification Bell in Light Mode */
+html[data-theme="light"] header {
+  background-color: rgba(255, 253, 249, 0.96) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid #DED5C7 !important;
+  box-shadow: 0 4px 20px -2px rgba(23, 23, 21, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="light"] header.nav-scrolled,
+html[data-theme="light"] header[class*="shadow-md"] {
+  background-color: rgba(255, 253, 249, 0.98) !important;
+  border-bottom: 1px solid #DED5C7 !important;
+  box-shadow: 0 4px 24px -2px rgba(23, 23, 21, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+html[data-theme="light"] header a[href="/"] span.font-serif,
+html[data-theme="light"] header a[href="/"] span[class*="text-white"],
+html[data-theme="light"] header .font-serif {
+  color: #171715 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] header a[href="/"] span[class*="text-[#C1A87D]"] {
+  color: #A88748 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] header nav a {
+  color: #171715 !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+html[data-theme="light"] header nav a:hover {
+  color: #A88748 !important;
+}
+
+html[data-theme="light"] header nav a[class*="font-semibold"],
+html[data-theme="light"] header nav a[class*="text-white"] {
+  color: #171715 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] header nav a span[class*="bg-[#C1A87D]"] {
+  background-color: #B99A63 !important;
+}
+
+html[data-theme="light"] header [class*="text-stone-300"],
+html[data-theme="light"] header [class*="text-stone-200"] {
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header button:not([class*="bg-[#C1A87D]"]) {
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header button:hover {
+  color: #A88748 !important;
+}
+
+/* Theme Toggle Button in Light Mode */
+html[data-theme="light"] header button[title*="Mode"],
+html[data-theme="light"] header button[aria-label*="theme"],
+html[data-theme="light"] header button:has(svg.lucide-sun),
+html[data-theme="light"] header button:has(svg.lucide-moon) {
+  background-color: #F6F1E8 !important;
+  border: 1px solid #DED5C7 !important;
+  color: #A88748 !important;
+  box-shadow: 0 1px 3px rgba(23, 23, 21, 0.05) !important;
+}
+
+html[data-theme="light"] header button[title*="Mode"]:hover,
+html[data-theme="light"] header button[aria-label*="theme"]:hover,
+html[data-theme="light"] header button:has(svg.lucide-sun):hover,
+html[data-theme="light"] header button:has(svg.lucide-moon):hover {
+  background-color: #EDE5D8 !important;
+  border-color: #A88748 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header button:has(svg.lucide-sun) svg,
+html[data-theme="light"] header button:has(svg.lucide-moon) svg {
+  color: #A88748 !important;
+  stroke-width: 2 !important;
+}
+
+/* Notification Bell in Light Mode */
+html[data-theme="light"] header button:has(svg.lucide-bell) {
+  border-color: #DED5C7 !important;
+  background-color: #F6F1E8 !important;
+  color: #171715 !important;
+  box-shadow: 0 1px 3px rgba(23, 23, 21, 0.05) !important;
+}
+
+html[data-theme="light"] header button:has(svg.lucide-bell):hover {
+  color: #A88748 !important;
+  border-color: #A88748 !important;
+  background-color: #EDE5D8 !important;
+}
+
+/* Shopping Cart Badge in Light Mode */
+html[data-theme="light"] header button[aria-label="Cart"] span[class*="bg-[#C1A87D]"] {
+  background-color: #B99A63 !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Mobile Hamburger Button in Light Mode */
+html[data-theme="light"] header button[aria-label="Toggle mobile menu"] {
+  color: #171715 !important;
+}
+html[data-theme="light"] header button[aria-label="Toggle mobile menu"]:hover {
+  color: #A88748 !important;
+}
+
+/* Mobile Drawer in Light Mode */
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] {
+  background-color: rgba(255, 253, 249, 0.99) !important;
+  border-top: 1px solid #DED5C7 !important;
+  box-shadow: 0 16px 36px rgba(23, 23, 21, 0.1) !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] nav a {
+  color: #171715 !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] nav a:hover {
+  color: #A88748 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] nav a[class*="text-[#C1A87D]"] {
+  color: #A88748 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] [class*="border-t"] {
+  border-top-color: #DED5C7 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] button {
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] button:hover {
+  color: #A88748 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] button[class*="border-white/10"] {
+  border-color: #DED5C7 !important;
+  background-color: #F6F1E8 !important;
+  color: #171715 !important;
+}
+
+html[data-theme="light"] header div[class*="backdrop-blur-xl"] button[class*="border-white/10"]:hover {
+  background-color: #EDE5D8 !important;
+  border-color: #A88748 !important;
+  color: #171715 !important;
+}
