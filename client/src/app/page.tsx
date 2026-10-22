@@ -1912,10 +1912,11 @@ function LocationSection() {
         >
           <iframe
             title="Aurelle Location Map - Alawwa Town, Sri Lanka"
-            src="https://maps.google.com/maps?q=Alawwa%20Town,%20Sri%20Lanka&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.625345719329!2d80.2323446750003!3d7.296895713753733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3171465e921b3%3A0x6b871c841368a52e!2sAlawwa%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1710000000000!5m2!1sen!2slk"
             className="w-full h-full min-h-[380px] lg:min-h-[560px] border-0 block"
             loading="lazy"
             allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
           />
           <div className="absolute top-4 left-4 bg-[#111215]/90 backdrop-blur-md border border-[#C1A87D]/40 px-3.5 py-2 rounded-sm shadow-xl flex items-center space-x-2 pointer-events-none z-10">
             <MapPin className="w-4 h-4 text-[#C1A87D]" />
