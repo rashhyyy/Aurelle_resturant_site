@@ -229,7 +229,7 @@ export default function ReservationsPage() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[72px] font-serif font-normal text-white keep-white tracking-tight leading-[1.08] drop-shadow-md"
+            className="text-3xl sm:text-6xl lg:text-[72px] font-serif font-normal text-white keep-white tracking-tight leading-[1.08] drop-shadow-md"
           >
             {t("res.title", "Your table awaits.")}
           </motion.h1>
@@ -249,7 +249,7 @@ export default function ReservationsPage() {
       {/* 2. MULTI-STEP PROGRESS STEPPER (Steps 1, 2, 3)          */}
       {/* ======================================================== */}
       {step < 4 && (
-        <div className="max-w-md mx-auto px-4 mt-12 mb-8">
+        <div className="max-w-md mx-auto px-4 mt-8 sm:mt-12 mb-6 sm:mb-8">
           <div className="flex items-center justify-between relative">
             <div className="absolute top-4 left-6 right-6 h-[1px] bg-stone-800 -z-0" />
 
@@ -311,7 +311,7 @@ export default function ReservationsPage() {
       {/* ======================================================== */}
       {/* 3. STEP CONTENT CARDS                                    */}
       {/* ======================================================== */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6">
         <AnimatePresence mode="wait">
           {/* ---------------- STEP 1: FIND A TABLE ---------------- */}
           {step === 1 && (
@@ -321,7 +321,7 @@ export default function ReservationsPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35 }}
-              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-6 sm:p-10 shadow-2xl space-y-8"
+              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-4 sm:p-10 shadow-2xl space-y-6 sm:space-y-8"
             >
               {/* VENUE SELECTION */}
               <div>
@@ -503,9 +503,9 @@ export default function ReservationsPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35 }}
-              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-6 sm:p-10 shadow-2xl space-y-6"
+              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-4 sm:p-10 shadow-2xl space-y-6"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 {/* FULL NAME */}
                 <div>
                   <label className="text-[10.5px] uppercase tracking-[0.2em] text-stone-400 font-medium block mb-2">
@@ -537,7 +537,7 @@ export default function ReservationsPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 {/* EMAIL */}
                 <div>
                   <label className="text-[10.5px] uppercase tracking-[0.2em] text-stone-400 font-medium block mb-2">
@@ -591,11 +591,11 @@ export default function ReservationsPage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-stone-800/80">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-3 pt-4 border-t border-stone-800/80">
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="bg-transparent hover:bg-stone-800 border border-stone-600 hover:border-white text-stone-200 text-xs font-semibold tracking-[0.16em] uppercase px-7 py-3 rounded-[2px] transition-colors"
+                  className="bg-transparent hover:bg-stone-800 border border-stone-600 hover:border-white text-stone-200 text-xs font-semibold tracking-[0.16em] uppercase px-7 py-3 rounded-[2px] transition-colors text-center"
                 >
                   BACK
                 </button>
@@ -605,7 +605,7 @@ export default function ReservationsPage() {
                   type="button"
                   disabled={!fullName.trim() || !email.trim() || !contactNumber.trim()}
                   onClick={() => setStep(3)}
-                  className="bg-[#F6F2EB] disabled:opacity-50 hover:bg-white text-[#15161A] text-xs font-semibold tracking-[0.16em] uppercase px-8 py-3 rounded-[2px] transition-colors shadow-md"
+                  className="bg-[#F6F2EB] disabled:opacity-50 hover:bg-white text-[#15161A] text-xs font-semibold tracking-[0.16em] uppercase px-8 py-3 rounded-[2px] transition-colors shadow-md text-center"
                 >
                   CONTINUE
                 </motion.button>
@@ -621,13 +621,13 @@ export default function ReservationsPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35 }}
-              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-6 sm:p-12 text-center shadow-2xl space-y-6"
+              className="bg-[#17191E]/95 border border-[#272B35] rounded-[2px] p-4 sm:p-12 text-center shadow-2xl space-y-6"
             >
               <span className="text-[10.5px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">
                 REVIEW YOUR RESERVATION
               </span>
 
-              <h2 className="text-3xl sm:text-5xl font-serif font-normal text-white tracking-tight">
+              <h2 className="text-2xl sm:text-5xl font-serif font-normal text-white tracking-tight">
                 {formatDisplayDate(date)}
               </h2>
 
@@ -680,12 +680,12 @@ export default function ReservationsPage() {
               )}
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-center sm:justify-end gap-3 pt-6 border-t border-stone-800/80">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-center sm:justify-end gap-3 pt-6 border-t border-stone-800/80">
                 <button
                   type="button"
                   disabled={submitting}
                   onClick={() => setStep(2)}
-                  className="bg-transparent hover:bg-stone-800 border border-stone-600 hover:border-white text-stone-200 text-xs font-semibold tracking-[0.16em] uppercase px-7 py-3 rounded-[2px] transition-colors"
+                  className="bg-transparent hover:bg-stone-800 border border-stone-600 hover:border-white text-stone-200 text-xs font-semibold tracking-[0.16em] uppercase px-7 py-3 rounded-[2px] transition-colors text-center"
                 >
                   BACK
                 </button>
@@ -695,7 +695,7 @@ export default function ReservationsPage() {
                   type="button"
                   disabled={submitting}
                   onClick={handleFinalSubmit}
-                  className="bg-[#F6F2EB] disabled:opacity-50 hover:bg-white text-[#15161A] text-xs font-semibold tracking-[0.16em] uppercase px-8 py-3 rounded-[2px] transition-colors shadow-md flex items-center gap-2"
+                  className="bg-[#F6F2EB] disabled:opacity-50 hover:bg-white text-[#15161A] text-xs font-semibold tracking-[0.16em] uppercase px-8 py-3 rounded-[2px] transition-colors shadow-md flex items-center justify-center gap-2 text-center"
                 >
                   {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
                   <span>{submitting ? "CONFIRMING..." : "CONFIRM RESERVATION"}</span>

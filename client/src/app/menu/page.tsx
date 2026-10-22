@@ -259,7 +259,7 @@ function MenuContent() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[70px] font-serif font-normal text-white keep-white tracking-tight leading-[1.08] drop-shadow-md"
+            className="text-3xl sm:text-6xl lg:text-[70px] font-serif font-normal text-white keep-white tracking-tight leading-[1.08] drop-shadow-md"
           >
             A world of flavour, <br />
             considered.
@@ -281,7 +281,7 @@ function MenuContent() {
       {/* ======================================================== */}
       <section
         id="menu-controls"
-        className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-10 scroll-mt-24"
+        className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-8 sm:pt-10 scroll-mt-24"
       >
         {/* Search Input Box */}
         <div className="max-w-xl">
@@ -294,7 +294,7 @@ function MenuContent() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder='Try "Sri Lankan", "prawns", "tandoori" or "vegan"'
-              className="w-full bg-[#1A1D24] border border-[#2A2E38] rounded-[2px] px-4 py-3.5 text-sm text-stone-200 placeholder-stone-500 outline-none focus:border-[#C1A87D] transition-colors"
+              className="w-full bg-[#1A1D24] border border-[#2A2E38] rounded-[2px] px-4 py-3 sm:py-3.5 text-sm text-stone-200 placeholder-stone-500 outline-none focus:border-[#C1A87D] transition-colors"
             />
             {searchQuery && (
               <button
@@ -308,8 +308,8 @@ function MenuContent() {
           </div>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center gap-2.5 flex-wrap mt-6">
+        {/* Filter Pills with Smooth Horizontal Scroll on Mobile */}
+        <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 mt-6">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;
             const catLabel =
@@ -329,7 +329,7 @@ function MenuContent() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer ${
+                className={`px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all cursor-pointer whitespace-nowrap shrink-0 ${
                   isSelected
                     ? "bg-white text-black font-semibold shadow-md"
                     : "bg-[#181B22] text-stone-300 border border-[#272B35] hover:border-stone-500 hover:text-white"
@@ -342,18 +342,18 @@ function MenuContent() {
         </div>
 
         {/* Action strip: Count, Sort dropdown, and PDF Download */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-12 pt-6 border-t border-stone-800/80">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-8 sm:mt-12 pt-6 border-t border-stone-800/80">
           <span className="text-xs text-stone-400 font-light">
             {filteredItems.length} dishes in selection
           </span>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             {/* Sort Dropdown */}
-            <div className="relative">
+            <div className="relative w-full xs:w-auto">
               <select
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
-                className="appearance-none bg-[#1A1D24] text-xs font-medium text-stone-200 border border-[#272B35] px-4 py-2.5 pr-9 rounded-[2px] outline-none focus:border-[#C1A87D] cursor-pointer"
+                className="w-full xs:w-auto appearance-none bg-[#1A1D24] text-xs font-medium text-stone-200 border border-[#272B35] px-4 py-2.5 pr-9 rounded-[2px] outline-none focus:border-[#C1A87D] cursor-pointer"
               >
                 <option value="Chef recommended">Chef recommended</option>
                 <option value="Price: Low to High">Price: Low to High</option>
@@ -365,7 +365,7 @@ function MenuContent() {
             {/* Download Menu PDF Button */}
             <button
               type="button"
-              className="inline-flex items-center gap-2 bg-[#171A21] hover:bg-[#20242E] border border-stone-600 hover:border-white text-stone-200 hover:text-white text-[11px] font-semibold tracking-[0.16em] uppercase px-4 py-2.5 rounded-[2px] transition-colors cursor-pointer"
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 bg-[#171A21] hover:bg-[#20242E] border border-stone-600 hover:border-white text-stone-200 hover:text-white text-[11px] font-semibold tracking-[0.16em] uppercase px-4 py-2.5 rounded-[2px] transition-colors cursor-pointer"
             >
               <Download className="w-3.5 h-3.5 stroke-[1.8]" />
               <span>DOWNLOAD MENU PDF</span>

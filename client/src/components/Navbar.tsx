@@ -123,14 +123,14 @@ export default function Navbar() {
         }`}
       >
         {/* Sleek, reduced height container (h-14 on mobile, h-16 on desktop) */}
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between relative">
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between relative">
           {/* Left Side: Brand Logo */}
           <div className="flex items-center flex-shrink-0 z-10">
             <Link
               href="/"
               className="flex flex-col items-start justify-center group"
             >
-              <span className="font-serif text-lg sm:text-xl md:text-[21px] tracking-[0.24em] font-medium leading-none transition-colors group-hover:opacity-85 text-white">
+              <span className="font-serif text-base sm:text-xl md:text-[21px] tracking-[0.2em] sm:tracking-[0.24em] font-medium leading-none transition-colors group-hover:opacity-85 text-white">
                 A U R E L L E
               </span>
               <span className="text-[7.5px] tracking-[0.32em] text-[#C1A87D] uppercase mt-1 font-medium">
@@ -169,7 +169,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Actions & Utilities */}
-          <div className="flex items-center space-x-3 sm:space-x-4 flex-shrink-0 z-10 transition-colors text-stone-300">
+          <div className="flex items-center space-x-1 sm:space-x-3 md:space-x-4 flex-shrink-0 z-10 transition-colors text-stone-300">
             {/* Search Trigger */}
             <button
               type="button"
@@ -180,21 +180,21 @@ export default function Navbar() {
               <Search className="w-[17px] h-[17px] stroke-[1.8]" />
             </button>
 
-            {/* Language Selector */}
+            {/* Language Selector (Hidden on mobile phones, accessible in mobile menu drawer) */}
             <button
               type="button"
               onClick={() => setPreferencesOpen(true)}
-              className="text-[11.5px] font-medium tracking-wider transition-colors cursor-pointer px-1 hover:text-white"
+              className="hidden sm:inline-block text-[11.5px] font-medium tracking-wider transition-colors cursor-pointer px-1 hover:text-white"
               title="Change Language"
             >
               {language}
             </button>
 
-            {/* Currency Selector */}
+            {/* Currency Selector (Hidden on mobile phones, accessible in mobile menu drawer) */}
             <button
               type="button"
               onClick={() => setPreferencesOpen(true)}
-              className="text-[11.5px] font-medium tracking-wider transition-colors cursor-pointer px-1 hover:text-white"
+              className="hidden sm:inline-block text-[11.5px] font-medium tracking-wider transition-colors cursor-pointer px-1 hover:text-white"
               title="Change Currency"
             >
               {currency}
@@ -282,7 +282,7 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden backdrop-blur-xl border-t px-6 py-5 space-y-4 shadow-2xl overflow-hidden transition-colors bg-stone-950/98 border-white/10"
+              className="lg:hidden backdrop-blur-xl border-t px-5 sm:px-6 py-5 space-y-4 shadow-2xl max-h-[calc(100vh-3.5rem)] overflow-y-auto transition-colors bg-stone-950/98 border-white/10"
             >
               <nav className="flex flex-col space-y-2.5">
                 {NAV_LINKS.map((link) => {

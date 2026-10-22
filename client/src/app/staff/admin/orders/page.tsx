@@ -393,7 +393,7 @@ export default function AdminOrdersPage() {
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full min-w-[720px] text-left text-xs">
               <thead>
                 <tr
                   className={`border-b text-[10px] font-mono uppercase ${

@@ -141,7 +141,7 @@ function SignUpContent() {
         </div>
 
         {/* Sign Up Card */}
-        <div className="bg-[#101114] border border-stone-800 rounded-xl p-6 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur-sm">
+        <div className="bg-[#101114] border border-stone-800 rounded-xl p-5 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur-sm">
           {errorMessage && (
             <div className="mb-6 p-3.5 rounded-[4px] bg-red-950/40 border border-red-500/30 flex items-start gap-3 text-red-300 text-xs leading-relaxed animate-in fade-in duration-200">
               <AlertCircle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />

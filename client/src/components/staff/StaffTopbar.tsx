@@ -172,16 +172,17 @@ export const StaffTopbar = ({ onOpenMobileSidebar }: StaffTopbarProps) => {
               <div>
                 <button
                   onClick={() => setLocationDropdownOpen(!locationDropdownOpen)}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all ${
+                  className={`flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 rounded-lg border text-xs font-mono transition-all ${
                     isDark
                       ? 'border-[#2C2C28] bg-[#1E1E1B] text-[#ECE7DF] hover:border-[#B99A63]/40'
                       : 'border-[#D9D2C4] bg-white text-[#171715] hover:border-[#B99A63]/50'
                   }`}
                   aria-expanded={locationDropdownOpen}
                   aria-haspopup="true"
+                  title={selectedLocation || userLocations[0]}
                 >
                   <MapPin size={13} className="text-[#B99A63] shrink-0" />
-                  <span className="truncate max-w-[120px] sm:max-w-[160px]">
+                  <span className="hidden sm:inline truncate max-w-[120px] sm:max-w-[160px]">
                     {selectedLocation || userLocations[0]}
                   </span>
                   <ChevronDown size={13} className="text-[#737068]" />

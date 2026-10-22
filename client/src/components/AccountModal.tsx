@@ -196,7 +196,7 @@ export default function AccountModal({
   };
 
   const modalBody = (
-    <div className={`relative w-full max-w-5xl ${isStandalonePage ? "" : "max-h-[88vh] overflow-y-auto"} bg-[#101114] border border-stone-800 rounded-xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] p-5 sm:p-9 z-10 [color-scheme:dark]`}>
+    <div className={`relative w-full max-w-5xl ${isStandalonePage ? "" : "max-h-[88vh] overflow-y-auto"} bg-[#101114] border border-stone-800 rounded-xl shadow-[0_25px_60px_rgba(0,0,0,0.95)] p-4 sm:p-9 z-10 [color-scheme:dark]`}>
       {/* Top Modal Header Bar */}
       <div className="flex items-center justify-between pb-5 border-b border-stone-800">
         <button
@@ -586,7 +586,7 @@ export default function AccountModal({
                         {userOrders.map((ord: any) => (
                           <div
                             key={ord.id || ord.orderReference}
-                            className="bg-[#111215] border border-stone-800/80 p-5 rounded-[2px] flex items-center justify-between"
+                            className="bg-[#111215] border border-stone-800/80 p-5 rounded-[2px] flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                           >
                             <div>
                               <span className="text-xs text-[#86A697] font-semibold tracking-wider uppercase block">
@@ -639,7 +639,7 @@ export default function AccountModal({
                       <Calendar className="w-5 h-5 text-[#C1A87D]" />
                     </div>
 
-                    <div className="bg-[#111215] border border-stone-800/80 p-5 rounded-[2px] flex items-center justify-between">
+                    <div className="bg-[#111215] border border-stone-800/80 p-5 rounded-[2px] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div>
                         <span className="text-xs text-[#D4B572] font-semibold tracking-wider uppercase block">BOOKING #RES-2841 · CONFIRMED</span>
                         <p className="text-white font-medium text-sm mt-1">Main Dining Pavilion · 2 Guests</p>
@@ -684,7 +684,7 @@ export default function AccountModal({
                       </label>
                     </div>
 
-                    <div className="pt-4 border-t border-stone-800/60 flex items-center justify-between">
+                    <div className="pt-4 border-t border-stone-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <Link
                         href="/account/notifications"
                         onClick={onClose}

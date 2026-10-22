@@ -461,10 +461,10 @@ function CartContent() {
                   {cart.map((item) => (
                     <div
                       key={item.id}
-                      className="py-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6"
+                      className="py-6 sm:py-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6"
                     >
-                      <div className="flex items-center gap-5">
-                        <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-[2px] overflow-hidden border border-stone-800 bg-stone-900 flex-shrink-0 flex items-center justify-center">
+                      <div className="flex items-start xs:items-center gap-3.5 sm:gap-5">
+                        <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-[2px] overflow-hidden border border-stone-800 bg-stone-900 flex-shrink-0 flex items-center justify-center">
                           {item.image && item.image.startsWith('http') ? (
                             <Image
                               src={item.image}
@@ -534,7 +534,7 @@ function CartContent() {
                 </div>
 
                 {/* Right: Order Summary Box */}
-                <div className="lg:col-span-4 bg-[#181A20] border border-stone-800 rounded-[2px] p-6 sm:p-8 space-y-6">
+                <div className="lg:col-span-4 bg-[#181A20] border border-stone-800 rounded-[2px] p-4 sm:p-8 space-y-6">
                   <h3 className="font-serif text-2xl text-white">
                     Order summary
                   </h3>
@@ -699,7 +699,7 @@ function CartContent() {
             {/* Form Box & Order Summary Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
               {/* Form Content */}
-              <div className="lg:col-span-8 bg-[#181A20] border border-stone-800 rounded-[2px] p-8 sm:p-12 shadow-2xl">
+              <div className="lg:col-span-8 bg-[#181A20] border border-stone-800 rounded-[2px] p-4 sm:p-8 lg:p-12 shadow-2xl">
                 <AnimatePresence mode="wait">
                   {/* STEP 1: CUSTOMER DETAILS */}
                   {checkoutStep === 1 && (
@@ -1073,7 +1073,7 @@ function CartContent() {
               </div>
 
               {/* Order Summary Sidebar */}
-              <div className="lg:col-span-4 bg-[#181A20] border border-stone-800 rounded-[2px] p-6 sm:p-8 space-y-6">
+              <div className="lg:col-span-4 bg-[#181A20] border border-stone-800 rounded-[2px] p-4 sm:p-8 space-y-6">
                 <h3 className="font-serif text-2xl text-white">
                   Order summary
                 </h3>
@@ -1210,7 +1210,7 @@ function CartContent() {
             <div className="max-w-[1240px] mx-auto px-4 sm:px-8 py-12 lg:py-16">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 {/* Left Card: Scheduled Pickup & Stepper */}
-                <div className="lg:col-span-8 bg-[#181A16] border border-stone-800/80 rounded-[2px] p-6 sm:p-10 shadow-2xl space-y-6">
+                <div className="lg:col-span-8 bg-[#181A16] border border-stone-800/80 rounded-[2px] p-4 sm:p-10 shadow-2xl space-y-6">
                   {/* Top Pickup Info */}
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-4">

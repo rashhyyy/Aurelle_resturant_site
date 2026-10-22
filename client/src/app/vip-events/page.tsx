@@ -132,7 +132,7 @@ export default function VipEventsPage() {
       {/* ======================================================== */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-16">
         {/* Category Pill Filters */}
-        <div className="flex items-center gap-3 flex-wrap mb-10">
+        <div className="flex items-center gap-2.5 sm:gap-3 overflow-x-auto no-scrollbar py-1 mb-8 sm:mb-10">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
@@ -140,7 +140,7 @@ export default function VipEventsPage() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2 rounded-full text-xs font-medium tracking-wide transition-all ${
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs font-medium tracking-wide transition-all whitespace-nowrap shrink-0 cursor-pointer ${
                   isSelected
                     ? "bg-white text-black font-semibold shadow-md"
                     : "bg-[#181B22] text-stone-300 border border-[#272B35] hover:border-stone-500 hover:text-white"
@@ -218,7 +218,7 @@ export default function VipEventsPage() {
         id="enquiry-form"
         className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 mt-24"
       >
-        <div className="bg-[#566453] text-[#F1EFEA] rounded-[2px] p-8 sm:p-14 lg:p-16 shadow-2xl">
+        <div className="bg-[#566453] text-[#F1EFEA] rounded-[2px] p-5 sm:p-14 lg:p-16 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
             {/* Left Title Column */}
             <div className="lg:col-span-5 space-y-4">

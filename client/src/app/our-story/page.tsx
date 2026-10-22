@@ -71,7 +71,7 @@ export default function OurStoryPage() {
       <section className="w-full bg-[#15171D] border-t border-b border-stone-800/80">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[580px]">
           {/* Left Dark Content Column */}
-          <div className="p-8 sm:p-14 lg:p-20 flex flex-col justify-between">
+          <div className="p-5 sm:p-14 lg:p-20 flex flex-col justify-between">
             <div className="space-y-6">
               <span className="text-[11px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">
                 OUR POINT OF VIEW
@@ -207,7 +207,7 @@ export default function OurStoryPage() {
         {/* 4. LOCATION, MAP & CONTACT SECTION                       */}
         {/* ======================================================== */}
         <div className="w-full bg-[#16181F] border border-stone-800 rounded-[2px] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 mb-14">
-          <div className="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
+          <div className="lg:col-span-5 p-5 sm:p-10 lg:p-12 flex flex-col justify-between">
             <div className="space-y-4">
               <span className="text-[10.5px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">
                 VISIT AURELLE

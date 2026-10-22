@@ -355,8 +355,8 @@ function OrderDetailContent() {
 
             <div className="divide-y divide-[#2C2C28]/60">
               {order.items.map((item, idx) => (
-                <div key={idx} className="py-4 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
+                <div key={idx} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
                     {item.image ? (
                       <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-stone-800 bg-black flex-shrink-0">
                         <Image src={item.image} alt={item.dishName} fill className="object-cover" />
@@ -366,15 +366,15 @@ function OrderDetailContent() {
                         <ShoppingBag size={18} />
                       </div>
                     )}
-                    <div>
-                      <h4 className="text-sm font-medium text-white">{item.dishName}</h4>
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-medium text-white truncate">{item.dishName}</h4>
                       <span className="text-xs font-mono text-stone-400">
                         {item.quantity} × LKR {(item.unitPriceMinor / 100).toLocaleString()}
                       </span>
                     </div>
                   </div>
 
-                  <span className="font-mono font-semibold text-sm text-white">
+                  <span className="font-mono font-semibold text-sm text-white shrink-0 self-end sm:self-auto">
                     LKR {(item.lineTotalMinor / 100).toLocaleString()}
                   </span>
                 </div>

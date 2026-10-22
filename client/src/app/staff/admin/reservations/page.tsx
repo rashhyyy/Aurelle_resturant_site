@@ -434,7 +434,7 @@ export default function AdminReservationsPage() {
         }`}
       >
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
+          <table className="w-full min-w-[780px] text-left text-xs">
             <thead
               className={`border-b text-[10px] uppercase font-mono tracking-wider ${
                 isDark

@@ -94,7 +94,7 @@ export default function ContactPage() {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 -mt-12 relative z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Card 1: Address */}
-          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
+          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-5 sm:p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#202530] border border-[#2D3342] flex items-center justify-center text-[#C1A87D] mb-5">
                 <MapPin className="w-5 h-5" />
@@ -129,7 +129,7 @@ export default function ContactPage() {
           </div>
 
           {/* Card 2: Phone */}
-          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
+          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-5 sm:p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#202530] border border-[#2D3342] flex items-center justify-center text-[#C1A87D] mb-5">
                 <Phone className="w-5 h-5" />
@@ -173,7 +173,7 @@ export default function ContactPage() {
           </div>
 
           {/* Card 3: Email */}
-          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
+          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-5 sm:p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#202530] border border-[#2D3342] flex items-center justify-center text-[#C1A87D] mb-5">
                 <Mail className="w-5 h-5" />
@@ -217,7 +217,7 @@ export default function ContactPage() {
           </div>
 
           {/* Card 4: Hours */}
-          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
+          <div className="bg-[#181B22]/95 backdrop-blur-md border border-[#262B35] rounded-[2px] p-5 sm:p-7 flex flex-col justify-between shadow-2xl hover:border-[#C1A87D]/50 transition-colors">
             <div>
               <div className="w-10 h-10 rounded-full bg-[#202530] border border-[#2D3342] flex items-center justify-center text-[#C1A87D] mb-5">
                 <Clock className="w-5 h-5" />
@@ -266,7 +266,7 @@ export default function ContactPage() {
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-20">
         <div className="bg-[#181B22] border border-[#262B35] rounded-[2px] overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12">
           {/* Left Column: Map Details & Travel Info */}
-          <div className="lg:col-span-5 p-8 sm:p-12 lg:p-14 flex flex-col justify-between">
+          <div className="lg:col-span-5 p-5 sm:p-12 lg:p-14 flex flex-col justify-between">
             <div className="space-y-6">
               <span className="text-[11px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">
                 LOCATION &amp; PIN
@@ -366,7 +366,7 @@ export default function ContactPage() {
       {/* 4. CONTACT & INQUIRIES FORM SECTION                      */}
       {/* ======================================================== */}
       <section className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-20">
-        <div className="bg-[#15171D] border border-[#242833] rounded-[2px] p-8 sm:p-14 lg:p-16 shadow-2xl">
+        <div className="bg-[#15171D] border border-[#242833] rounded-[2px] p-5 sm:p-14 lg:p-16 shadow-2xl">
           <div className="max-w-3xl mx-auto">
             <div className="text-center space-y-3 mb-10">
               <span className="text-[10.5px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">

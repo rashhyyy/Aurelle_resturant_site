@@ -54,7 +54,7 @@ function HeroSection() {
 
   return (
     <section data-hero="true" className="relative w-full p-0 m-0">
-      <div className="relative w-full h-[78vh] min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] max-h-[760px] rounded-b-[2.5rem] sm:rounded-b-[3rem] lg:rounded-b-[3.5rem] overflow-hidden bg-[#0A0A0A] flex flex-col justify-between px-6 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-10 sm:pb-12 shadow-2xl">
+      <div className="relative w-full h-[78vh] min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] max-h-[760px] rounded-b-[2rem] sm:rounded-b-[3rem] lg:rounded-b-[3.5rem] overflow-hidden bg-[#0A0A0A] flex flex-col justify-between px-4 sm:px-12 lg:px-20 pt-16 sm:pt-20 pb-8 sm:pb-12 shadow-2xl">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <AnimatePresence initial={false}>
             <motion.div
@@ -101,14 +101,14 @@ function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
         </div>
 
-        <div className="relative z-10 h-12 sm:h-16" />
+        <div className="relative z-10 h-10 sm:h-16" />
 
-        <div className="relative z-10 max-w-2xl flex-1 flex flex-col justify-end pt-16 sm:pt-20 lg:pt-24 pb-1 md:pb-2">
+        <div className="relative z-10 max-w-2xl flex-1 flex flex-col justify-end pt-12 sm:pt-20 lg:pt-24 pb-1 md:pb-2">
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[70px] font-bold text-white tracking-tight leading-[1.06]"
+            className="text-3xl sm:text-6xl lg:text-[70px] font-bold text-white tracking-tight leading-[1.06]"
           >
             {t("hero.title", "Exceptional dining.")}
           </motion.h1>
@@ -117,7 +117,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl lg:text-[60px] font-serif italic text-[#EDE6D8] font-normal mt-1 leading-[1.1]"
+            className="text-2xl sm:text-5xl lg:text-[60px] font-serif italic text-[#EDE6D8] font-normal mt-1 leading-[1.1]"
           >
             {t("hero.timed", "Thoughtfully timed.")}
           </motion.h2>
@@ -126,7 +126,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-stone-300 text-sm sm:text-[15px] font-light leading-relaxed mt-5 max-w-lg"
+            className="text-stone-300 text-xs sm:text-[15px] font-light leading-relaxed mt-4 sm:mt-5 max-w-lg"
           >
             {t("hero.subtitle", "A considered journey through Sri Lanka and the world, shaped by the season and served with warm, intuitive hospitality.")}
           </motion.p>
@@ -135,16 +135,17 @@ function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center gap-3.5 sm:gap-4 mt-7 sm:mt-8"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-6 sm:mt-8 w-full sm:w-auto"
           >
             <motion.div
               whileHover={{ y: -2, scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/menu"
-                className="inline-flex items-center justify-center bg-[#D6CBBF] hover:bg-[#E2D8CC] text-[#121418] text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-[2px] transition-all duration-300 shadow-md group"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-[#D6CBBF] hover:bg-[#E2D8CC] text-[#121418] text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-[2px] transition-all duration-300 shadow-md group"
               >
                 <span>{t("hero.exploreMenu", "EXPLORE THE MENU")}</span>
                 <span className="ml-2.5 transition-transform duration-300 group-hover:translate-x-1 font-sans">→</span>
@@ -155,10 +156,11 @@ function HeroSection() {
               whileHover={{ y: -2, scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="w-full sm:w-auto"
             >
               <Link
                 href="/reservations"
-                className="inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-[2px] border border-white/30 hover:border-white/60 transition-all duration-300 shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white text-[11px] sm:text-xs font-semibold tracking-[0.16em] uppercase px-6 sm:px-7 py-3 sm:py-3.5 rounded-[2px] border border-white/30 hover:border-white/60 transition-all duration-300 shadow-sm"
               >
                 {t("hero.reserveTable", "RESERVE A TABLE")}
               </Link>
@@ -166,7 +168,7 @@ function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="relative z-10 flex items-end justify-between pt-4 pb-1">
+        <div className="relative z-10 flex items-end justify-between gap-3 pt-4 pb-1">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -174,7 +176,7 @@ function HeroSection() {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
             aria-label="Aurelle Emblem"
-            className="w-11 h-11 rounded-full bg-[#D6CBBF] shadow-lg cursor-pointer hover:bg-white transition-colors"
+            className="hidden sm:block w-11 h-11 rounded-full bg-[#D6CBBF] shadow-lg cursor-pointer hover:bg-white transition-colors"
           />
 
           <motion.div
@@ -182,7 +184,7 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             whileHover={{ y: -2 }}
             transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-black/60 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 max-w-[270px] sm:max-w-xs shadow-2xl transition-all hover:border-white/25"
+            className="bg-black/60 backdrop-blur-md border border-white/15 rounded-2xl p-3.5 sm:p-5 w-full sm:w-auto sm:max-w-xs shadow-2xl transition-all hover:border-white/25"
           >
             <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-stone-400 font-medium">
               <Clock className="w-3.5 h-3.5 text-[#C1A87D]" />
@@ -295,7 +297,7 @@ function FeaturedDishCard({
       whileHover={{ y: -6, transition: { type: "spring", stiffness: 350, damping: 25 } }}
       onMouseEnter={onActivate}
       onClick={onActivate}
-      className={`relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col items-center text-center transition-all duration-300 cursor-pointer group ${
+      className={`relative rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col items-center text-center transition-all duration-300 cursor-pointer group ${
         isActive
           ? "bg-[#21242D]/95 dark:bg-[#21242D]/95 light:bg-[#FAF4EB] border border-[#C1A87D]/50 dark:border-[#C1A87D]/50 light:border-[#C1A87D]/60 shadow-[0_15px_35px_rgba(0,0,0,0.5)] light:shadow-md transform -translate-y-1"
           : "bg-transparent hover:bg-white/[0.04] dark:hover:bg-white/[0.04] light:hover:bg-stone-100/70 border border-transparent hover:border-white/10 dark:hover:border-white/10 light:hover:border-stone-300/60"
@@ -303,7 +305,7 @@ function FeaturedDishCard({
     >
       {/* Circular Dish Image */}
       <div
-        className={`w-36 h-36 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full relative overflow-hidden transition-all duration-300 shrink-0 ${
+        className={`w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44 rounded-full relative overflow-hidden transition-all duration-300 shrink-0 ${
           isActive
             ? "ring-4 ring-[#C1A87D] shadow-[0_0_25px_rgba(193,168,125,0.4)]"
             : "ring-2 ring-stone-700/50 dark:ring-stone-700/50 light:ring-stone-300 group-hover:ring-[#C1A87D]/60"
@@ -505,7 +507,7 @@ function MenuSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.8, delay: 0.1, ease: LUXURY_EASE }}
-          className="mt-12 rounded-[2rem] sm:rounded-[2.5rem] bg-[#16181E]/75 dark:bg-[#16181E]/75 light:bg-[#FAF7F2] border border-stone-800/80 dark:border-stone-800/80 light:border-stone-200/90 p-6 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md"
+          className="mt-12 rounded-[2rem] sm:rounded-[2.5rem] bg-[#16181E]/75 dark:bg-[#16181E]/75 light:bg-[#FAF7F2] border border-stone-800/80 dark:border-stone-800/80 light:border-stone-200/90 p-4 sm:p-8 lg:p-10 shadow-2xl backdrop-blur-md"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
             {dishList.map((dish, index) => (
@@ -565,7 +567,7 @@ function ExperienceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, delay: 0.1, ease: LUXURY_EASE }}
-          className="bg-[#566453] p-8 sm:p-12 md:p-14 lg:p-16 xl:p-20 2xl:p-24 flex flex-col justify-between text-[#F1EFEA]"
+          className="bg-[#566453] p-6 sm:p-12 md:p-14 lg:p-16 xl:p-20 2xl:p-24 flex flex-col justify-between text-[#F1EFEA]"
         >
           <div>
             <span className="text-[11px] sm:text-[12px] uppercase tracking-[0.28em] text-[#D8E0D5] font-medium block">
@@ -582,28 +584,28 @@ function ExperienceSection() {
           </div>
 
           <div className="mt-8 sm:mt-10 pt-6 border-t border-white/20">
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-6 sm:mb-8">
               <div>
-                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
+                <span className="text-[9.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
                   DATE
                 </span>
-                <span className="font-serif text-sm sm:text-base lg:text-lg text-white mt-0.5 block">
+                <span className="font-serif text-xs sm:text-base lg:text-lg text-white mt-0.5 block truncate">
                   Fri, 18 Oct
                 </span>
               </div>
               <div>
-                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
+                <span className="text-[9.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
                   GUESTS
                 </span>
-                <span className="font-serif text-sm sm:text-base lg:text-lg text-white mt-0.5 block">
+                <span className="font-serif text-xs sm:text-base lg:text-lg text-white mt-0.5 block truncate">
                   2 people
                 </span>
               </div>
               <div>
-                <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
+                <span className="text-[9.5px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C6D2C2] block">
                   TIME
                 </span>
-                <span className="font-serif text-sm sm:text-base lg:text-lg text-white mt-0.5 block">
+                <span className="font-serif text-xs sm:text-base lg:text-lg text-white mt-0.5 block truncate">
                   7:30 PM
                 </span>
               </div>
@@ -627,7 +629,7 @@ function ExperienceSection() {
       </div>
 
       {/* 2. Remaining Content Contained */}
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-20 lg:pt-28 pb-16 lg:pb-24 space-y-24 lg:space-y-32">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-14 pt-14 sm:pt-20 lg:pt-28 pb-14 sm:pb-16 lg:pb-24 space-y-16 sm:space-y-24 lg:space-y-32">
         <div>
           <motion.div
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
@@ -638,12 +640,12 @@ function ExperienceSection() {
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-stone-400 font-medium block">
               EXPLORE
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-serif font-normal text-white mt-2 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-[44px] font-serif font-normal text-white mt-2 tracking-tight">
               Many traditions. One point of view.
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 mt-10 border border-stone-800/80 bg-[#15171C]/70 divide-y sm:divide-y-0 sm:divide-x divide-stone-800/80 overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 mt-8 sm:mt-10 border border-stone-800/80 bg-[#15171C]/70 divide-y sm:divide-y-0 sm:divide-x divide-stone-800/80 overflow-hidden">
             {TRADITIONS.map((item, idx) => (
               <motion.div
                 key={item.id}
@@ -659,7 +661,7 @@ function ExperienceSection() {
               >
                 <Link
                   href={item.href}
-                  className="group relative p-8 sm:p-10 flex flex-col justify-between min-h-[220px] h-full hover:bg-[#1C1F26] transition-colors duration-300"
+                  className="group relative p-6 sm:p-10 flex flex-col justify-between min-h-[180px] sm:min-h-[220px] h-full hover:bg-[#1C1F26] transition-colors duration-300"
                 >
                   <span className="text-[11px] text-stone-500 font-mono">
                     {item.id}
@@ -1464,7 +1466,7 @@ function JournalTimelineSection() {
               <Link
                 href="/recipes/ceylon-cinnamon"
                 aria-label="Read story: The Quiet Complexity of Ceylon Cinnamon"
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center cursor-pointer group/plate"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center cursor-pointer group/plate"
               >
                 {/* Outer concentric subtle ring */}
                 <div className="absolute inset-0 rounded-full border border-stone-400/25 group-hover/plate:border-[#C1A87D]/50 scale-110 pointer-events-none transition-colors duration-300" />
@@ -1473,7 +1475,7 @@ function JournalTimelineSection() {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-3 sm:p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
                 >
                   <div className="relative w-full h-full rounded-full overflow-hidden shadow-inner">
                     <motion.div
@@ -1509,15 +1511,15 @@ function JournalTimelineSection() {
                   <motion.div
                     whileHover={{ y: -6, scale: 1.015 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-7 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
+                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-5 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
                   >
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.26em] text-[#C1A87D] font-medium block mb-2">
                       INGREDIENTS · 6 MIN
                     </span>
-                    <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
+                    <h3 className="text-2xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
                       Ceylon Cinnamon
                     </h3>
-                    <h4 className="text-lg sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
+                    <h4 className="text-base sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
                       The Quiet Complexity
                     </h4>
                     <p className="text-[#8E96A6] text-xs sm:text-sm font-light leading-relaxed mt-3.5 max-w-sm">
@@ -1543,7 +1545,7 @@ function JournalTimelineSection() {
                 <motion.div
                   animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -right-6 pointer-events-none z-20"
+                  className="absolute -bottom-4 right-1 sm:-bottom-6 sm:-right-6 pointer-events-none z-20"
                 >
                   <BasilLeavesSvg className="w-16 h-14" />
                 </motion.div>
@@ -1570,15 +1572,15 @@ function JournalTimelineSection() {
                   <motion.div
                     whileHover={{ y: -6, scale: 1.015 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-7 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
+                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-5 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
                   >
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.26em] text-[#C1A87D] font-medium block mb-2">
                       TECHNIQUE · 8 MIN
                     </span>
-                    <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
+                    <h3 className="text-2xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
                       Balancing Heat
                     </h3>
-                    <h4 className="text-lg sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
+                    <h4 className="text-base sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
                       A Chef&apos;s Guide
                     </h4>
                     <p className="text-[#8E96A6] text-xs sm:text-sm font-light leading-relaxed mt-3.5 max-w-sm">
@@ -1610,7 +1612,7 @@ function JournalTimelineSection() {
               {/* Dish 2 (Right): Two vibrant red chilis on dark slate */}
               <Link
                 href="/recipes/balancing-heat"
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
                 aria-label="View dish: A Chef's Guide to Balancing Heat"
               >
                 <div className="absolute inset-0 rounded-full border border-stone-400/25 group-hover/plate:border-[#C1A87D]/50 scale-110 pointer-events-none transition-colors duration-300" />
@@ -1618,7 +1620,7 @@ function JournalTimelineSection() {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-3 sm:p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
                 >
                   <div className="relative w-full h-full rounded-full overflow-hidden shadow-inner">
                     <motion.div
@@ -1657,7 +1659,7 @@ function JournalTimelineSection() {
               {/* Dish 3: King Coconut, Three Ways */}
               <Link
                 href="/recipes/king-coconut"
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
                 aria-label="View dish: King Coconut, Three Ways"
               >
                 <div className="absolute inset-0 rounded-full border border-stone-400/25 group-hover/plate:border-[#C1A87D]/50 scale-110 pointer-events-none transition-colors duration-300" />
@@ -1665,7 +1667,7 @@ function JournalTimelineSection() {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-3 sm:p-4 bg-gradient-to-b from-[#1C1D24] via-[#101116] to-[#060608] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] group-hover/plate:border-[#C1A87D]/60 transition-colors"
                 >
                   <div className="relative w-full h-full rounded-full overflow-hidden shadow-inner">
                     <motion.div
@@ -1700,15 +1702,15 @@ function JournalTimelineSection() {
                   <motion.div
                     whileHover={{ y: -6, scale: 1.015 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-7 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
+                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-5 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
                   >
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.26em] text-[#C1A87D] font-medium block mb-2">
                       RECIPE · 12 MIN
                     </span>
-                    <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
+                    <h3 className="text-2xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
                       King Coconut
                     </h3>
-                    <h4 className="text-lg sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
+                    <h4 className="text-base sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
                       Three Ways
                     </h4>
                     <p className="text-[#8E96A6] text-xs sm:text-sm font-light leading-relaxed mt-3.5 max-w-sm">
@@ -1733,7 +1735,7 @@ function JournalTimelineSection() {
                 <motion.div
                   animate={{ y: [0, 8, 0], rotate: [0, -4, 0] }}
                   transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -right-12 pointer-events-none z-20"
+                  className="absolute -bottom-4 right-1 sm:-bottom-6 sm:-right-12 pointer-events-none z-20"
                 >
                   <CherryTomatoesSvg className="w-18 h-22" />
                 </motion.div>
@@ -1760,15 +1762,15 @@ function JournalTimelineSection() {
                   <motion.div
                     whileHover={{ y: -6, scale: 1.015 }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-7 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
+                    className="bg-[#15171C]/90 backdrop-blur-md rounded-[4px] p-5 sm:p-8 shadow-2xl border border-stone-800/80 group-hover/card:border-[#D2BF96]/60 transition-colors duration-300"
                   >
                     <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.26em] text-[#C1A87D] font-medium block mb-2">
                       TRADITIONS · 10 MIN
                     </span>
-                    <h3 className="text-3xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
+                    <h3 className="text-2xl sm:text-4xl lg:text-[38px] font-serif text-white tracking-wide leading-tight group-hover/card:text-[#F6F2EB] transition-colors">
                       Ceylon Black Tea
                     </h3>
-                    <h4 className="text-lg sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
+                    <h4 className="text-base sm:text-xl font-serif italic text-stone-200 mt-1 font-light group-hover/card:text-white transition-colors">
                       Single-Estate Infusions
                     </h4>
                     <p className="text-[#8E96A6] text-xs sm:text-sm font-light leading-relaxed mt-3.5 max-w-sm">
@@ -1793,7 +1795,7 @@ function JournalTimelineSection() {
                 <motion.div
                   animate={{ y: [0, -8, 0], rotate: [0, -5, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-12 -left-6 pointer-events-none z-20"
+                  className="absolute -top-8 left-1 sm:-top-12 sm:-left-6 pointer-events-none z-20"
                 >
                   <BasilLeavesSvg className="w-16 h-14" />
                 </motion.div>
@@ -1802,7 +1804,7 @@ function JournalTimelineSection() {
               {/* Dish 4 (Right): Single-Estate Ceylon Black Tea */}
               <Link
                 href="/recipes/ceylon-black-tea"
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
+                className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-[310px] lg:h-[310px] flex-shrink-0 flex items-center justify-center group/plate cursor-pointer"
                 aria-label="View dish: Single-Estate Ceylon Black Tea"
               >
                 <div className="absolute inset-0 rounded-full border border-stone-400/25 group-hover/plate:border-[#C1A87D]/50 scale-110 pointer-events-none transition-colors duration-300" />
@@ -1810,9 +1812,9 @@ function JournalTimelineSection() {
                 <motion.div
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-4 bg-gradient-to-b from-[#1C1D24] via-[#0E0F14] to-[#040405] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] flex items-center justify-center group-hover/plate:border-[#C1A87D]/60 transition-colors"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-[280px] lg:h-[280px] rounded-full p-3 sm:p-4 bg-gradient-to-b from-[#1C1D24] via-[#0E0F14] to-[#040405] shadow-[0_30px_60px_rgba(0,0,0,0.95)] border-2 border-[#222530] flex items-center justify-center group-hover/plate:border-[#C1A87D]/60 transition-colors"
                 >
-                  <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-[200px] lg:h-[200px] rounded-full overflow-hidden shadow-inner">
+                  <div className="relative w-36 h-36 sm:w-52 sm:h-52 lg:w-[200px] lg:h-[200px] rounded-full overflow-hidden shadow-inner">
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
@@ -1856,14 +1858,14 @@ function LocationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: LUXURY_EASE }}
-          className="bg-[#1D1D19] p-8 sm:p-14 lg:p-20 flex flex-col justify-between"
+          className="bg-[#1D1D19] p-5 sm:p-14 lg:p-20 flex flex-col justify-between"
         >
           <div className="space-y-6">
             <span className="text-[11px] uppercase tracking-[0.28em] text-[#C1A87D] font-medium block">
               VISIT AURELLE
             </span>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-serif font-normal text-white leading-[1.08] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-serif font-normal text-white leading-[1.08] tracking-tight">
               Find your way <br />
               to the table
             </h2>

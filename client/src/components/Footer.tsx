@@ -508,7 +508,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Policies & Scroll To Top */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-4 gap-y-2">
             <Link
               href="/privacy"
               className="hover:text-[#B99A63] transition-colors duration-250 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#B99A63] rounded-[1px] text-[#BAB3A8]"
