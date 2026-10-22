@@ -168,17 +168,7 @@ function HeroSection() {
           </motion.div>
         </div>
 
-        <div className="relative z-10 flex items-end justify-between gap-3 pt-4 pb-1">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            aria-label="Aurelle Emblem"
-            className="hidden sm:block w-11 h-11 rounded-full bg-[#D6CBBF] shadow-lg cursor-pointer hover:bg-white transition-colors"
-          />
-
+        <div className="relative z-10 flex items-end justify-end gap-3 pt-4 pb-1">
           <motion.div
             initial={{ opacity: 0, x: 25 }}
             animate={{ opacity: 1, x: 0 }}
